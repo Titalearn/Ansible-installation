@@ -26,7 +26,7 @@ resource "aws_instance" "ubuntu-hosts" {
   instance_type = var.my_instance_type
   user_data = file("${path.module}/create_ansible_user.sh")
   key_name = var.my_key
-  count = 3
+  count = 2
   tags = {
     "Name" = "My-Ubuntu-${count.index}"
     "Type" = "My-Ubuntu-${count.index}"
@@ -38,7 +38,7 @@ resource "aws_instance" "rhel-hosts" {
   instance_type = var.my_instance_type
   user_data = file("${path.module}/create_ansible_user.sh")
   key_name = var.my_key
-  count = 5
+  count = 1
   tags = {
     "Name" = "My-rhel-${count.index}"
   }
